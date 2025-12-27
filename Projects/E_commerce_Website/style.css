@@ -1,7 +1,7 @@
 /* ==================== CSS RESET ==================== */
 * {
   margin: 0;
-  padding: 0;
+  padding: 0; 
   box-sizing: border-box;
 }
 
@@ -765,37 +765,57 @@ body {
     transition: all 0.3s ease;
     z-index: 999;
   }
-  
+
   .navbar.active {
     transform: translateY(0);
     opacity: 1;
   }
-  
+
   .menu-toggle {
     display: flex;
   }
-  
+
   .section-heading {
     font-size: 3rem;
   }
-  
+
   .home-content h1 {
     font-size: 3.5rem;
   }
-  
+
   .home-content h3 {
     font-size: 2rem;
   }
-  
-  .plans-grid,
-  .services-grid {
+
+  /* Plans: unchanged (1 per row) */
+  .plans-grid {
     grid-template-columns: 1fr;
   }
-  
+
+  /* Services: 3 per row */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .service-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
   .plan-options {
     grid-template-columns: 1fr;
   }
 }
+
 
 @media (max-width: 576px) {
   .header {
